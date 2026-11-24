@@ -46,10 +46,10 @@ export const MonetizationSeoModal: React.FC<MonetizationSeoModalProps> = ({
   const generateSitemapXml = () => {
     const today = new Date().toISOString().slice(0, 10);
     const urls = [
-      `  <url>\n    <loc>https://bhvsy.github.io/tools</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`,
+      `  <url>\n    <loc>https://bhvsy.github.io/24Tools/</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`,
       ...TOOLS_CATALOG.map(
         (t) =>
-          `  <url>\n    <loc>https://bhvsy.github.io/tools?tool=${t.id}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>`
+          `  <url>\n    <loc>https://bhvsy.github.io/24Tools/?tool=${t.id}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>`
       ),
     ];
     return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join(

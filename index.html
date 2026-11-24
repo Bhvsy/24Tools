@@ -10,11 +10,12 @@
     />
     <meta
       name="keywords"
-      content="Bhvsy Tools, Bhavishya Parjapati, Bhvsy OS, Google Drive direct link generator, Google Photos direct link, OneDrive direct link, compress image to 20kb, exam photo signature maker, merge pdf online, dns checker, tls certificate checker, domain xray, rojuka tools alternative"
+      content="Bhvsy Tools, Bhavishya Parjapati, Bhvsy OS, 24Tools, Google Drive direct link generator, Google Photos direct link, OneDrive direct link, compress image to 20kb, exam photo signature maker, merge pdf online, dns checker, tls certificate checker, domain xray, rojuka tools alternative"
     />
     <meta name="author" content="Bhavishya Parjapati (Bhvsy OS)" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#090D16" />
+    <link rel="canonical" href="https://bhvsy.github.io/24Tools/" />
 
     <!-- OpenGraph / Social Sharing -->
     <meta property="og:type" content="website" />
@@ -24,7 +25,7 @@
       property="og:description"
       content="Convert cloud links, compress images to exact KB, edit PDFs, and run live DNS/TLS domain diagnostics in your browser. Zero login, 100% free by Bhvsy OS."
     />
-    <meta property="og:url" content="https://bhvsy.github.io/tools" />
+    <meta property="og:url" content="https://bhvsy.github.io/24Tools/" />
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -52,13 +53,13 @@
           {
             "@type": "WebApplication",
             "name": "Bhvsy Tools",
-            "alternateName": "Bhvsy OS Utility Stack",
-            "url": "https://bhvsy.github.io/tools",
+            "alternateName": "Bhvsy OS 24Tools Utility Stack",
+            "url": "https://bhvsy.github.io/24Tools/",
             "applicationCategory": "UtilitiesApplication",
             "operatingSystem": "All",
             "browserRequirements": "Requires JavaScript and HTML5 Canvas",
             "description": "All-in-one browser utility suite featuring 24+ tools across Cloud Direct Link Generators, Exact-KB Image Compression, Exam Photo-Signature Studio, Client-Side PDF Manipulation, and Live Domain/DNS/TLS Diagnostics.",
-            "Creator": {
+            "creator": {
               "@type": "Person",
               "name": "Bhavishya Parjapati",
               "url": "https://bhvsy.github.io/",
@@ -82,5 +83,39 @@
   <body class="bg-slate-50 text-slate-900 dark:bg-[#090D16] dark:text-slate-100 antialiased selection:bg-indigo-600 selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Automatic GitHub Pages Direct-Branch Bootloader:
+      // When published directly from AI Studio to a GitHub repo (e.g., https://bhvsy.github.io/24Tools/)
+      // where GitHub Pages serves the raw 'main' branch root before/without a Vite build step,
+      // /src/main.tsx cannot run natively in the browser. This bootloader detects raw static hosting
+      // and mounts the pre-compiled production bundle from ./public/gh-pages-bundle/ automatically.
+      (function () {
+        var hasRawTsxTag = Boolean(document.querySelector('script[src="/src/main.tsx"]'));
+        var isGitHubPages = location.hostname.endsWith('github.io');
+        function loadPrebuiltBundle() {
+          if (window.__BHVSY_BUNDLE_LOADED__) return;
+          window.__BHVSY_BUNDLE_LOADED__ = true;
+          var css = document.createElement('link');
+          css.rel = 'stylesheet';
+          css.href = './public/gh-pages-bundle/app.css';
+          document.head.appendChild(css);
+
+          var js = document.createElement('script');
+          js.type = 'module';
+          js.src = './public/gh-pages-bundle/app.js';
+          document.body.appendChild(js);
+        }
+        if (isGitHubPages && hasRawTsxTag) {
+          loadPrebuiltBundle();
+        } else if (hasRawTsxTag) {
+          setTimeout(function () {
+            var root = document.getElementById('root');
+            if (root && root.children.length === 0) {
+              loadPrebuiltBundle();
+            }
+          }, 800);
+        }
+      })();
+    </script>
   </body>
 </html>

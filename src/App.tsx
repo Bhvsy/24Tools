@@ -102,7 +102,7 @@ export default function App() {
             name: `${activeTool.name} – Bhvsy Tools`,
             applicationCategory: 'UtilitiesApplication',
             operatingSystem: 'All',
-            url: `https://bhvsy.github.io/tools?tool=${activeTool.id}`,
+            url: `https://bhvsy.github.io/24Tools/?tool=${activeTool.id}`,
             description: activeTool.seoDescription,
             author: {
               '@type': 'Person',
@@ -172,7 +172,7 @@ export default function App() {
   }, [selectedCategory, searchQuery]);
 
   const copyToolDeepLink = () => {
-    const shareUrl = `https://bhvsy.github.io/tools?tool=${activeTool.id}`;
+    const shareUrl = `https://bhvsy.github.io/24Tools/?tool=${activeTool.id}`;
     navigator.clipboard.writeText(shareUrl);
     setCopiedShareLink(true);
     setTimeout(() => setCopiedShareLink(false), 1800);
