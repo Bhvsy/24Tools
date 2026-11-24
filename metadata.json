@@ -1,0 +1,6 @@
+{
+  "name": "Bhvsy Tools – 24+ Free Cloud, PDF, Image & Domain Utilities",
+  "description": "Convert cloud links, compress images to exact KB, edit PDFs, and run live DNS/TLS domain diagnostics in your browser. Zero login, 100% free by Bhvsy OS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
